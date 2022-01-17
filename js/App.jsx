@@ -4,12 +4,12 @@ const App = () => {
   const [rok, setRok] = useState(2014);
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://data.irozhlas.cz/olympiada-zimni/${rok}.json`)
+    fetch(`https://data.irozhlas.cz/olympiada-zimni/data/${rok}.json`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
       });
-  }, [[], rok]);
+  }, [rok]);
 
   return <div>{rok}</div>;
 };
