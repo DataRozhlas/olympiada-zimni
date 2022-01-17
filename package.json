@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type" : "module",
   "scripts": {
     "watch": "node builder.js watch",
     "build": "node builder.js build"
@@ -25,6 +26,11 @@
     "clean-css": "^4.2.1",
     "js-yaml": "^3.13.1",
     "marked": "^4.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "webpack": "^5.48.0"
+  },
+  "devDependencies": {
+    "d3": "^7.3.0"
   }
 }
