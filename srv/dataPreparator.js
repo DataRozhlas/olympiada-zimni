@@ -11,9 +11,9 @@ const winter = data
     return {
       n: d.Name,
       s: d.Sex,
-      a: d.Age,
-      h: d.Height,
-      w: d.Weight,
+      a: Number(d.Age),
+      h: Number(d.Height),
+      w: Number(d.Weight),
       t: d.Team,
       y: d.Year,
       c: d.City,
