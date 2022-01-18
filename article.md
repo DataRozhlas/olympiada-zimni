@@ -8,4 +8,6 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 
 ---
 
+<wide>
 <div id="root">
+</wide>

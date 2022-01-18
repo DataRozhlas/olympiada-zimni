@@ -208,7 +208,7 @@
   <script type="text/javascript">
     document.getElementsByTagName('article')[0].classList.add('b-data--no-img');
   </script>
-  <style>ol.snowfall,ul.snowfall{list-style:initial!important;font-size:medium!important;line-height:1.5!important}ol.snowfall>li,ul.snowfall>li{background:0 0!important;margin:0!important;padding:0!important}hr.snowfall{max-width:none!important}</style>
+  <style>ol.snowfall,ul.snowfall{list-style:initial!important;font-size:medium!important;line-height:1.5!important}ol.snowfall>li,ul.snowfall>li{background:0 0!important;margin:0!important;padding:0!important}hr.snowfall{max-width:none!important}.nav{display:flex;justify-content:space-between}.nav-link{cursor:pointer}</style>
 
   <div class="row-main row-main--article">
     <h1 class="b-data__title b-data__title--sm" id="snfl-title-div">
@@ -231,7 +231,9 @@
 
   <div class="row-main row-main--narrow">
     
-    <div id="root">
+    </div><div class="row-main row-main--article">
+<div id="root">
+</div><div class="row-main row-main--narrow">
 
     <p class="meta meta--right meta--big">
       <!--[[ZPRAVY_SNOWFALL_AUTHORS:FOOTER]]-->
@@ -260,7 +262,40 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\nfunction _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== \"undefined\" && arr[Symbol.iterator] || arr[\"@@iterator\"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\nvar App = function App() {\n  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(2014),\n      _useState2 = _slicedToArray(_useState, 2),\n      rok = _useState2[0],\n      setRok = _useState2[1];\n\n  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),\n      _useState4 = _slicedToArray(_useState3, 2),\n      data = _useState4[0],\n      setData = _useState4[1];\n\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {\n    fetch(\"https://data.irozhlas.cz/olympiada-zimni/data/\".concat(rok, \".json\")).then(function (res) {\n      return res.json();\n    }).then(function (data) {\n      setData(data);\n    });\n  }, [rok]);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, rok);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://samizdat-snodefall/./js/App.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _Title_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Title.jsx */ \"./js/Title.jsx\");\n/* harmony import */ var _Chart_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Chart.jsx */ \"./js/Chart.jsx\");\n/* harmony import */ var _Input_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Input.jsx */ \"./js/Input.jsx\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\nfunction _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== \"undefined\" && arr[Symbol.iterator] || arr[\"@@iterator\"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\n\n\n\nvar App = function App() {\n  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(2014),\n      _useState2 = _slicedToArray(_useState, 2),\n      rok = _useState2[0],\n      setRok = _useState2[1];\n\n  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),\n      _useState4 = _slicedToArray(_useState3, 2),\n      data = _useState4[0],\n      setData = _useState4[1];\n\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {\n    fetch(\"https://data.irozhlas.cz/olympiada-zimni/data/\".concat(rok, \".json\")).then(function (res) {\n      return res.json();\n    }).then(function (data) {\n      setData(data);\n    });\n  }, [rok]);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Title_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {\n    rok: rok,\n    setRok: setRok\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chart_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://samizdat-snodefall/./js/App.jsx?");
+
+/***/ }),
+
+/***/ "./js/Chart.jsx":
+/*!**********************!*\
+  !*** ./js/Chart.jsx ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Chart = function Chart() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Chart);\n\n//# sourceURL=webpack://samizdat-snodefall/./js/Chart.jsx?");
+
+/***/ }),
+
+/***/ "./js/Input.jsx":
+/*!**********************!*\
+  !*** ./js/Input.jsx ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Input = function Input() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);\n\n//# sourceURL=webpack://samizdat-snodefall/./js/Input.jsx?");
+
+/***/ }),
+
+/***/ "./js/Title.jsx":
+/*!**********************!*\
+  !*** ./js/Title.jsx ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _data_olympiady_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../data/olympiady.json */ \"./data/olympiady.json\");\n\n\n\nvar zmenRok = function zmenRok(e, setRok, olympiady, olympIndex) {\n  e.preventDefault();\n  e.target.innerText === \"←\" ? setRok(olympiady[olympIndex - 1][0]) : setRok(olympiady[olympIndex + 1][0]);\n};\n\nvar Title = function Title(_ref) {\n  var rok = _ref.rok,\n      setRok = _ref.setRok;\n  var olympiada = _data_olympiady_json__WEBPACK_IMPORTED_MODULE_1__.filter(function (olympiada) {\n    return olympiada[0] === rok;\n  });\n  var olympIndex = _data_olympiady_json__WEBPACK_IMPORTED_MODULE_1__.findIndex(function (o) {\n    return o[0] === rok;\n  });\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h2\", {\n    className: \"nav\"\n  }, olympIndex > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", {\n    className: \"nav-link\",\n    onClick: function onClick(e) {\n      zmenRok(e, setRok, _data_olympiady_json__WEBPACK_IMPORTED_MODULE_1__, olympIndex);\n    }\n  }, \"\\u2190\") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, olympiada[0][0], \"\\xA0\", olympiada[0][1]), olympIndex < _data_olympiady_json__WEBPACK_IMPORTED_MODULE_1__.length - 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", {\n    className: \"nav-link\",\n    onClick: function onClick(e) {\n      zmenRok(e, setRok, _data_olympiady_json__WEBPACK_IMPORTED_MODULE_1__, olympIndex);\n    }\n  }, \"\\u2192\") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null)));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Title);\n\n//# sourceURL=webpack://samizdat-snodefall/./js/Title.jsx?");
 
 /***/ }),
 
@@ -381,6 +416,17 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 "use strict";
 eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ \"./node_modules/scheduler/cjs/scheduler-tracing.development.js\");\n}\n\n\n//# sourceURL=webpack://samizdat-snodefall/./node_modules/scheduler/tracing.js?");
+
+/***/ }),
+
+/***/ "./data/olympiady.json":
+/*!*****************************!*\
+  !*** ./data/olympiady.json ***!
+  \*****************************/
+/***/ ((module) => {
+
+"use strict";
+eval("module.exports = JSON.parse('[[1924,\"Chamonix\"],[1928,\"Sankt Moritz\"],[1932,\"Lake Placid\"],[1936,\"Garmisch-Partenkirchen\"],[1948,\"Sankt Moritz\"],[1952,\"Oslo\"],[1956,\"Cortina d\\'Ampezzo\"],[1960,\"Squaw Valley\"],[1964,\"Innsbruck\"],[1968,\"Grenoble\"],[1972,\"Sapporo\"],[1976,\"Innsbruck\"],[1980,\"Lake Placid\"],[1984,\"Sarajevo\"],[1988,\"Calgary\"],[1992,\"Albertville\"],[1994,\"Lillehammer\"],[1998,\"Nagano\"],[2002,\"Salt Lake City\"],[2006,\"Torino\"],[2010,\"Vancouver\"],[2014,\"Sochi\"]]');\n\n//# sourceURL=webpack://samizdat-snodefall/./data/olympiady.json?");
 
 /***/ })
 

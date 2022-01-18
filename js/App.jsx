@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Title from "./Title.jsx";
+import Chart from "./Chart.jsx";
+import Input from "./Input.jsx";
 
 const App = () => {
   const [rok, setRok] = useState(2014);
@@ -11,7 +14,13 @@ const App = () => {
       });
   }, [rok]);
 
-  return <div>{rok}</div>;
+  return (
+    <div>
+      <Title rok={rok} setRok={setRok} />
+      <Chart />
+      <Input />
+    </div>
+  );
 };
 
 export default App;
