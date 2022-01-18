@@ -39,6 +39,7 @@ fs.writeFileSync(
 
 roky.map((r) => {
   const rok = winter
+    .filter((o) => o.h && o.w)
     .filter((o) => o.y === r)
     .map((a) => {
       return {
