@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div>
       <Title rok={rok} setRok={setRok} />
-      <Chart />
+      <Chart data={data} />
       <Input />
     </div>
   );
