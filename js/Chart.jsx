@@ -13,19 +13,24 @@ const prepareData = (data) => {
       data: data
         .filter((d) => d.d === item)
         .map((sportovec) => {
-          return { x: sportovec.h, y: sportovec.w };
+          return {
+            x: sportovec.h,
+            y: sportovec.w,
+            name: sportovec.n,
+            t: sportovec.t,
+          };
         }),
     };
   });
   return sportovciDiscipliny;
 };
 
-const Chart = ({ data }) => {
+const Chart = ({ data, isMobile }) => {
   const [options, setOptions] = useState({});
 
   useEffect(() => {
     setOptions({
-      chart: { type: "scatter" },
+      chart: { type: "scatter", height: isMobile ? "150%" : "70%" },
       colors: [
         "#e64552",
         "#f57653",
@@ -42,9 +47,19 @@ const Chart = ({ data }) => {
       xAxis: {
         max: 210,
         min: 135,
+        title: { text: "cm" },
+      },
+      yAxis: {
+        max: 145,
+        min: 30,
+        title: { text: "kg" },
       },
       plotOptions: {},
-      tooltip: {},
+      tooltip: {
+        formatter: function () {
+          return `${this.point.name}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
+        },
+      },
       series: prepareData(data),
     });
   }, [data]);

@@ -56,3 +56,11 @@ roky.map((r) => {
   const fileName = `data/${r}.json`;
   fs.writeFileSync(fileName, JSON.stringify(rok));
 });
+
+// uka6 top výšky
+console.log(
+  winter
+    .filter((o) => o.h && o.w)
+    .sort((a, b) => a.w - b.w)
+    .slice(0, 10)
+);
