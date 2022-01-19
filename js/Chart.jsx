@@ -18,6 +18,7 @@ const prepareData = (data) => {
             y: sportovec.w,
             name: sportovec.n,
             t: sportovec.t,
+            custom: sportovec.d,
           };
         }),
     };
@@ -57,7 +58,7 @@ const Chart = ({ data, isMobile }) => {
       plotOptions: {},
       tooltip: {
         formatter: function () {
-          return `${this.point.name}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
+          return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
         },
       },
       series: prepareData(data),
