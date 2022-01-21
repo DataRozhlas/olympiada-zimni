@@ -57,10 +57,26 @@ roky.map((r) => {
   fs.writeFileSync(fileName, JSON.stringify(rok));
 });
 
-// uka6 top výšky
-console.log(
-  winter
-    .filter((o) => o.h && o.w)
-    .sort((a, b) => a.w - b.w)
-    .slice(0, 10)
+// vyjeď anglické termíny k překladu
+
+const sporty = [...new Set(winter.map((d) => d.d))];
+const staty = [...new Set(winter.map((d) => d.t))];
+const mesta = olympiady.map((d) => d[1]);
+const result = [...sporty, ...staty, ...mesta];
+
+fs.writeFileSync(
+  "data/terms.csv",
+  d3.csvFormat(
+    result.map((d) => {
+      return { term: d };
+    })
+  )
 );
+
+// ukaz top výšky
+// console.log(
+//   winter
+//     .filter((o) => o.h && o.w)
+//     .sort((a, b) => a.w - b.w)
+//     .slice(0, 10)
+// );

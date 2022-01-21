@@ -18,9 +18,9 @@ const App = () => {
 
   return (
     <div>
+      <Input />
       <Title rok={rok} setRok={setRok} />
       <Chart data={data} isMobile={isMobile} />
-      <Input />
     </div>
   );
 };
