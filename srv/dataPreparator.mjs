@@ -1,5 +1,7 @@
 import * as d3 from "d3-dsv";
 import fs from "fs";
+import diakritika from "./diakritika.mjs";
+import preklad from "./preklad.mjs";
 
 // načtení dat
 const data = d3.csvParse(fs.readFileSync("data/athlete_events.csv", "utf-8"));
@@ -9,15 +11,27 @@ const winter = data
   .filter((d) => d.Season === "Winter")
   .map((d) => {
     return {
-      n: d.Name,
+      n:
+        diakritika.filter((name) => name.Name === d.Name).length > 0
+          ? diakritika.filter((name) => name.Name === d.Name)[0].Edit
+          : d.Name,
       s: d.Sex,
       a: Number(d.Age),
       h: Number(d.Height),
       w: Number(d.Weight),
-      t: d.Team,
+      t:
+        preklad.filter((name) => name.term === d.Team).length > 0
+          ? preklad.filter((name) => name.term === d.Team)[0].edit
+          : d.Team,
       y: d.Year,
-      c: d.City,
-      d: d.Sport,
+      c:
+        preklad.filter((name) => name.term === d.City).length > 0
+          ? preklad.filter((name) => name.term === d.City)[0].edit
+          : d.City,
+      d:
+        preklad.filter((name) => name.term === d.Sport).length > 0
+          ? preklad.filter((name) => name.term === d.Sport)[0].edit
+          : d.Sport,
       m: d.Medal,
     };
   });
