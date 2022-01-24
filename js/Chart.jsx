@@ -47,7 +47,11 @@ const Chart = ({ data, weight, height, isMobile }) => {
 
   useEffect(() => {
     setOptions({
-      chart: { type: "scatter", height: isMobile ? "150%" : "70%" },
+      chart: {
+        type: "scatter",
+        height: isMobile ? "170%" : "70%",
+        animation: false,
+      },
       colors: [
         "#e64552",
         "#f57653",
