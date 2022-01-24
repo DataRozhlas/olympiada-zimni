@@ -1,6 +1,11 @@
 import React from "react";
 
-const Input = () => {
+const Input = ({ sex, setSex }) => {
+  const changeSex = (e) => {
+    e.preventDefault();
+    setSex(e.target.value);
+  };
+
   return (
     <div>
       <label htmlFor="height">Zadejte výšku </label>
@@ -22,7 +27,7 @@ const Input = () => {
         required
       />
       <label htmlFor="sex"> Vyberte pohlaví </label>
-      <select name="sex" id="sex" defaultValue="F">
+      <select name="sex" id="sex" value={sex} onChange={changeSex}>
         <option value="F">žena</option>
         <option value="M">muž</option>
       </select>

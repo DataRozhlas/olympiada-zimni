@@ -3,6 +3,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 const prepareData = (data) => {
+  // sestav disciplíny (pro legendu)
   const discipliny = data.map((item) => {
     return item.d;
   });
@@ -26,7 +27,7 @@ const prepareData = (data) => {
   return sportovciDiscipliny;
 };
 
-const Chart = ({ data, isMobile }) => {
+const Chart = ({ data, sex, isMobile }) => {
   const [options, setOptions] = useState({});
 
   useEffect(() => {
