@@ -3,7 +3,12 @@ import ReactDOM from "react-dom";
 import App from "./App.jsx";
 import "./byeie"; // loučíme se s IE
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
 /*
 // snadné načtení souboru pro každého!

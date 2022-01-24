@@ -7,8 +7,8 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
 
   const setWeightHeight = (e) => {
     e.target.id === "weight"
-      ? setWeight(e.target.value)
-      : setHeight(e.target.value);
+      ? setWeight(Number(e.target.value))
+      : setHeight(Number(e.target.value));
   };
 
   return (

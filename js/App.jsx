@@ -37,7 +37,12 @@ const App = () => {
         setWeight={setWeight}
       />
       <Title rok={rok} setRok={setRok} />
-      <Chart data={filteredData} sex={sex} isMobile={isMobile} />
+      <Chart
+        data={filteredData}
+        height={height}
+        weight={weight}
+        isMobile={isMobile}
+      />
     </div>
   );
 };

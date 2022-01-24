@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const prepareData = (data) => {
+const prepareData = (data, weight, height) => {
   // sestav disciplíny (pro legendu)
   const discipliny = data.map((item) => {
     return item.d;
@@ -24,10 +24,25 @@ const prepareData = (data) => {
         }),
     };
   });
+  // přidej uživatele do grafu
+  if (weight > 0 && height > 0) {
+    sportovciDiscipliny.push({
+      name: "uživatel",
+      data: [
+        {
+          x: height,
+          y: weight,
+          name: "uživatel",
+          t: "",
+          custom: "",
+        },
+      ],
+    });
+  }
   return sportovciDiscipliny;
 };
 
-const Chart = ({ data, sex, isMobile }) => {
+const Chart = ({ data, weight, height, isMobile }) => {
   const [options, setOptions] = useState({});
 
   useEffect(() => {
@@ -62,9 +77,9 @@ const Chart = ({ data, sex, isMobile }) => {
           return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
         },
       },
-      series: prepareData(data),
+      series: prepareData(data, weight, height),
     });
-  }, [data]);
+  }, [data, height, weight]);
 
   return (
     <div className="graf">
