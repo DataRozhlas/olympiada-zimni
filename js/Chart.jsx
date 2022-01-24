@@ -27,14 +27,20 @@ const prepareData = (data, weight, height) => {
   // přidej uživatele do grafu
   if (weight > 0 && height > 0) {
     sportovciDiscipliny.push({
-      name: "uživatel",
+      name: "vy",
       data: [
         {
           x: height,
           y: weight,
-          name: "uživatel",
+          name: "vy",
           t: "",
           custom: "",
+          marker: {
+            symbol:
+              "url(https://data.irozhlas.cz/olympiada-zimni/media/target.png)",
+            width: 30,
+            height: 30,
+          },
         },
       ],
     });
