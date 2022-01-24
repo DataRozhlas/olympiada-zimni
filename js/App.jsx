@@ -9,8 +9,8 @@ const App = () => {
   const [rok, setRok] = useState(2014);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [height, setHeight] = useState(null);
-  const [weight, setWeight] = useState(null);
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
   const [sex, setSex] = useState("F");
 
   useEffect(() => {
@@ -28,7 +28,14 @@ const App = () => {
 
   return (
     <div>
-      <Input sex={sex} setSex={setSex} />
+      <Input
+        sex={sex}
+        setSex={setSex}
+        height={height}
+        setHeight={setHeight}
+        weight={weight}
+        setWeight={setWeight}
+      />
       <Title rok={rok} setRok={setRok} />
       <Chart data={filteredData} sex={sex} isMobile={isMobile} />
     </div>

@@ -1,9 +1,14 @@
 import React from "react";
 
-const Input = ({ sex, setSex }) => {
+const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
   const changeSex = (e) => {
-    e.preventDefault();
     setSex(e.target.value);
+  };
+
+  const setWeightHeight = (e) => {
+    e.target.id === "weight"
+      ? setWeight(e.target.value)
+      : setHeight(e.target.value);
   };
 
   return (
@@ -13,6 +18,8 @@ const Input = ({ sex, setSex }) => {
         type="number"
         id="height"
         name="height"
+        value={height}
+        onChange={setWeightHeight}
         min="135"
         max="210"
         required
@@ -22,15 +29,26 @@ const Input = ({ sex, setSex }) => {
         type="number"
         id="weight"
         name="weight"
+        value={weight}
+        onChange={setWeightHeight}
         min="30"
         max="145"
         required
       />
-      <label htmlFor="sex"> Vyberte pohlaví </label>
-      <select name="sex" id="sex" value={sex} onChange={changeSex}>
-        <option value="F">žena</option>
-        <option value="M">muž</option>
-      </select>
+      <label>
+        <input
+          type="radio"
+          name="sex-radio"
+          value="F"
+          onChange={changeSex}
+          checked={sex === "F"}
+        />
+        ženy
+      </label>
+      <label>
+        <input type="radio" name="sex-radio" value="M" onChange={changeSex} />
+        muži
+      </label>
     </div>
   );
 };
