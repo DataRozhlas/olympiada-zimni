@@ -3,27 +3,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 const prepareData = (data, weight, height) => {
-  // sestav disciplíny (pro legendu)
-  const discipliny = data.map((item) => {
-    return item.d;
-  });
-  const unikatniDiscipliny = [...new Set(discipliny)];
-  const sportovciDiscipliny = unikatniDiscipliny.map((item) => {
-    return {
-      name: item,
-      data: data
-        .filter((d) => d.d === item)
-        .map((sportovec) => {
-          return {
-            x: sportovec.h,
-            y: sportovec.w,
-            name: sportovec.n,
-            t: sportovec.t,
-            custom: sportovec.d,
-          };
-        }),
-    };
-  });
+  const sportovciDiscipliny = data;
   // přidej uživatele do grafu
   if (weight > 0 && height > 0) {
     sportovciDiscipliny.push({
@@ -72,14 +52,10 @@ const Chart = ({ data, weight, height, isMobile }) => {
       title: { text: "" },
       credits: { enabled: false },
       xAxis: {
-        max: 210,
-        min: 135,
-        title: { text: "cm" },
+        title: { text: "kg" },
       },
       yAxis: {
-        max: 145,
-        min: 30,
-        title: { text: "kg" },
+        title: { text: "cm" },
       },
       plotOptions: {},
       tooltip: {
