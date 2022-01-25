@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const prepareData = (data, weight, height) => {
-  const sportovciDiscipliny = data;
+const addUser = (data, weight, height) => {
+  data.filter((item) => item.name === "vy").length > 0 ? data.pop() : null;
+
   // přidej uživatele do grafu
   if (weight > 0 && height > 0) {
-    sportovciDiscipliny.push({
+    data.push({
       name: "vy",
       data: [
         {
@@ -25,7 +26,7 @@ const prepareData = (data, weight, height) => {
       ],
     });
   }
-  return sportovciDiscipliny;
+  return data;
 };
 
 const Chart = ({ data, weight, height, isMobile }) => {
@@ -63,7 +64,7 @@ const Chart = ({ data, weight, height, isMobile }) => {
           return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
         },
       },
-      series: prepareData(data, weight, height),
+      series: addUser(data, weight, height),
     });
   }, [data, height, weight]);
 
