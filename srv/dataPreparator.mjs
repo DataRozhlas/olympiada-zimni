@@ -62,21 +62,26 @@ roky.map((r) => {
     const rok = winter
       .filter((o) => o.h && o.w) // jen kdyz maji uvedenou vysku a vahu
       .filter((o) => o.y === r) // jen z tohoto roku
-      .filter((o) => o.s === s) // jen jedno pohlavi
-      .map((a) => {
-        return {
-          n: a.n,
-          s: a.s,
-          a: a.a,
-          h: a.h,
-          w: a.w,
-          t: a.t,
-          d: a.d,
-          m: a.m,
-        };
-      });
+      .filter((o) => o.s === s); // jen jedno pohlavi
+
+    const result = sporty.map((sport) => {
+      return {
+        name: sport,
+        data: rok
+          .filter((sportovec) => sportovec.d === sport)
+          .map((sportovec) => {
+            return {
+              name: sportovec.n,
+              y: sportovec.h,
+              x: sportovec.w,
+              t: sportovec.t,
+              custom: sportovec.d,
+            };
+          }),
+      };
+    });
     const fileName = `data/${r}${s}.json`;
-    fs.writeFileSync(fileName, JSON.stringify(rok));
+    fs.writeFileSync(fileName, JSON.stringify(result));
   });
 });
 
