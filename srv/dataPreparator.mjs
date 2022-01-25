@@ -6,9 +6,9 @@ import preklad from "./preklad.mjs";
 // načtení dat
 const data = d3.csvParse(fs.readFileSync("data/athlete_events.csv", "utf-8"));
 
-// výběr dat - zimní olympiáda, jen relevantní
+// zúžení dat, překlad, diakritika
 const winter = data
-  .filter((d) => d.Season === "Winter")
+  .filter((d) => d.Season === "Winter") // jen zimni olympiady
   .map((d) => {
     return {
       n:
@@ -36,10 +36,10 @@ const winter = data
     };
   });
 
-// seznam roků a měst
-
+// seznam vsech roku
 const roky = [...new Set(winter.map((d) => d.y))];
 
+// seznam vsech mest
 const olympiady = roky.map((r, i) => {
   return [Number(r), winter.filter((o) => o.y === r).map((d) => d.c)[0]];
 });
@@ -49,43 +49,52 @@ fs.writeFileSync(
   JSON.stringify(olympiady.sort((a, b) => a[0] - b[0]))
 );
 
+// seznam vsech sportu
+
+const sporty = [...new Set(winter.map((d) => d.d))];
+
+console.log(sporty);
+
 // rozsekej data po letech
 
 roky.map((r) => {
-  const rok = winter
-    .filter((o) => o.h && o.w)
-    .filter((o) => o.y === r)
-    .map((a) => {
-      return {
-        n: a.n,
-        s: a.s,
-        a: a.a,
-        h: a.h,
-        w: a.w,
-        t: a.t,
-        d: a.d,
-        m: a.m,
-      };
-    });
-  const fileName = `data/${r}.json`;
-  fs.writeFileSync(fileName, JSON.stringify(rok));
+  ["M", "F"].map((s) => {
+    const rok = winter
+      .filter((o) => o.h && o.w) // jen kdyz maji uvedenou vysku a vahu
+      .filter((o) => o.y === r) // jen z tohoto roku
+      .filter((o) => o.s === s) // jen jedno pohlavi
+      .map((a) => {
+        return {
+          n: a.n,
+          s: a.s,
+          a: a.a,
+          h: a.h,
+          w: a.w,
+          t: a.t,
+          d: a.d,
+          m: a.m,
+        };
+      });
+    const fileName = `data/${r}${s}.json`;
+    fs.writeFileSync(fileName, JSON.stringify(rok));
+  });
 });
 
 // vyjeď anglické termíny k překladu
 
-const sporty = [...new Set(winter.map((d) => d.d))];
-const staty = [...new Set(winter.map((d) => d.t))];
-const mesta = olympiady.map((d) => d[1]);
-const result = [...sporty, ...staty, ...mesta];
+// const sporty = [...new Set(winter.map((d) => d.d))];
+// const staty = [...new Set(winter.map((d) => d.t))];
+// const mesta = olympiady.map((d) => d[1]);
+// const result = [...sporty, ...staty, ...mesta];
 
-fs.writeFileSync(
-  "data/terms.csv",
-  d3.csvFormat(
-    result.map((d) => {
-      return { term: d };
-    })
-  )
-);
+// fs.writeFileSync(
+//   "data/terms.csv",
+//   d3.csvFormat(
+//     result.map((d) => {
+//       return { term: d };
+//     })
+//   )
+// );
 
 // ukaz top výšky
 // console.log(
