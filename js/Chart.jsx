@@ -61,6 +61,7 @@ const Chart = ({ data, weight, height, isMobile }) => {
       plotOptions: {},
       tooltip: {
         formatter: function () {
+          console.log(data);
           return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
         },
       },
