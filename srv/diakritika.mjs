@@ -1783,6 +1783,7 @@ const diakritika = [
   { Name: "Marek idlick", Edit: "Marek Židlický", Sport: "Ice Hockey" },
   { Name: "Marek idlick", Edit: "Marek Židlický", Sport: "Ice Hockey" },
   { Name: "Veronika Zvaiov", Edit: "Veronika Zvařičová", Sport: "Biathlon" },
+  { Name: "Zdeno Chra", Edit: "Zdeno Chára", Sport: "Ice Hockey" },
 ];
 
 export default diakritika;

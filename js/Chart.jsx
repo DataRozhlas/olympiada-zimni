@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
@@ -29,9 +29,8 @@ const addUser = (data, weight, height) => {
   return data;
 };
 
-const Chart = ({ data, weight, height, isMobile }) => {
+const Chart = ({ data, weight, height, sex, isMobile }) => {
   const [options, setOptions] = useState({});
-
   useEffect(() => {
     setOptions({
       chart: {
@@ -54,15 +53,25 @@ const Chart = ({ data, weight, height, isMobile }) => {
       credits: { enabled: false },
       xAxis: {
         title: { text: "kg" },
+        min: sex === "M" ? 45 : 30,
+        max: sex === "M" ? 145 : 100,
+        tickInterval: 10,
       },
       yAxis: {
         title: { text: "cm" },
+        min: sex === "M" ? 140 : 135,
+        max: sex === "M" ? 210 : 195,
+        tickInterval: 10,
+      },
+      legend: {
+        layout: isMobile ? "horizontal" : "vertical",
+        verticalAlign: isMobile ? "bottom" : "middle",
+        align: isMobile ? "center" : "right",
       },
       plotOptions: {},
       tooltip: {
         formatter: function () {
-          console.log(data);
-          return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.x} cm, ${this.point.y} kg`;
+          return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.y} cm, ${this.point.x} kg`;
         },
       },
       series: addUser(data, weight, height),

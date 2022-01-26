@@ -53,8 +53,6 @@ fs.writeFileSync(
 
 const sporty = [...new Set(winter.map((d) => d.d))];
 
-console.log(sporty);
-
 // rozsekej data po letech
 
 roky.map((r) => {
@@ -84,8 +82,12 @@ roky.map((r) => {
           }),
       };
     });
+    const resultAdd = {
+      legendLength: result.filter((r) => r.showInLegend).length,
+      data: result,
+    };
     const fileName = `data/${r}${s}.json`;
-    fs.writeFileSync(fileName, JSON.stringify(result));
+    fs.writeFileSync(fileName, JSON.stringify(resultAdd));
   });
 });
 
@@ -105,10 +107,10 @@ roky.map((r) => {
 //   )
 // );
 
-// ukaz top výšky
-// console.log(
-//   winter
-//     .filter((o) => o.h && o.w)
-//     .sort((a, b) => a.w - b.w)
-//     .slice(0, 10)
-// );
+console.log(
+  winter
+    .filter((o) => o.s === "F")
+    .filter((o) => o.h && o.w)
+    .sort((a, b) => a.h - b.h)
+    .slice(0, 10)
+);
