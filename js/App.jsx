@@ -7,6 +7,7 @@ const isMobile = window.innerWidth <= 468;
 
 const App = () => {
   const [rok, setRok] = useState(2014);
+  const [legendLength, setLegendLength] = useState(undefined);
   const [data, setData] = useState([]);
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
@@ -16,7 +17,8 @@ const App = () => {
     fetch(`https://data.irozhlas.cz/olympiada-zimni/data/${rok}${sex}.json`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setLegendLength(data.legendLength);
+        setData(data.data);
       });
   }, [rok, sex]);
 
@@ -39,6 +41,7 @@ const App = () => {
         weight={weight}
         sex={sex}
         isMobile={isMobile}
+        legendLength={legendLength}
       />
     </div>
   );

@@ -29,13 +29,13 @@ const addUser = (data, weight, height) => {
   return data;
 };
 
-const Chart = ({ data, weight, height, sex, isMobile }) => {
+const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
   const [options, setOptions] = useState({});
   useEffect(() => {
     setOptions({
       chart: {
         type: "scatter",
-        height: isMobile ? "170%" : "70%",
+        height: isMobile ? 250 + legendLength * 20 : "70%",
         animation: false,
       },
       colors: [
@@ -67,6 +67,7 @@ const Chart = ({ data, weight, height, sex, isMobile }) => {
         layout: isMobile ? "horizontal" : "vertical",
         verticalAlign: isMobile ? "bottom" : "middle",
         align: isMobile ? "center" : "right",
+        maxHeight: isMobile ? legendLength * 20 : undefined,
       },
       plotOptions: {},
       tooltip: {
@@ -76,7 +77,7 @@ const Chart = ({ data, weight, height, sex, isMobile }) => {
       },
       series: addUser(data, weight, height),
     });
-  }, [data, height, weight]);
+  }, [data, legendLength, height, weight]);
 
   return (
     <div className="graf">
