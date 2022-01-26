@@ -66,6 +66,10 @@ roky.map((r) => {
 
     const result = sporty.map((sport) => {
       return {
+        showInLegend:
+          rok.filter((sportovec) => sportovec.d === sport).length > 0
+            ? true
+            : false,
         name: sport,
         data: rok
           .filter((sportovec) => sportovec.d === sport)
