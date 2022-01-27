@@ -84,7 +84,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         series: {
           states: {
             inactive: {
-              opacity: 0.01,
+              opacity: 0.1,
             },
           },
         },
