@@ -80,7 +80,15 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         verticalAlign: isMobile ? "bottom" : "middle",
         align: isMobile ? "center" : "right",
       },
-      plotOptions: {},
+      plotOptions: {
+        series: {
+          states: {
+            inactive: {
+              opacity: 0.01,
+            },
+          },
+        },
+      },
       tooltip: {
         formatter: function () {
           const stejniSportovci = data
