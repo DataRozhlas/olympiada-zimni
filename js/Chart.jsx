@@ -57,6 +57,11 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         max: sex === "M" ? 145 : 100,
         tickInterval: 10,
         title: { enabled: false },
+        labels: {
+          formatter: function () {
+            return this.isLast ? `${this.value} kg` : this.value;
+          },
+        },
       },
       yAxis: {
         title: { text: "cm" },
@@ -64,6 +69,11 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         max: sex === "M" ? 210 : 195,
         tickInterval: 10,
         title: { enabled: false },
+        labels: {
+          formatter: function () {
+            return this.isLast ? `${this.value} cm` : this.value;
+          },
+        },
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",
