@@ -32,9 +32,40 @@ const winter = data
         preklad.filter((name) => name.term === d.Sport).length > 0
           ? preklad.filter((name) => name.term === d.Sport)[0].edit
           : d.Sport,
-      m: d.Medal,
+      //     m: d.Medal,
     };
   });
+
+//odstranit duplicity
+let winterUnique = [];
+
+for (let index = 0; index < winter.length; index++) {
+  const name = winter[index].n;
+  const sex = winter[index].s;
+  const age = winter[index].a;
+  const height = winter[index].h;
+  const weight = winter[index].w;
+  const team = winter[index].t;
+  const sport = winter[index].d;
+
+  if (
+    winterUnique.filter(
+      (i) =>
+        i.n === name &&
+        i.s === sex &&
+        i.a === age &&
+        i.h === height &&
+        i.w === weight &&
+        i.t === team &&
+        i.d === sport
+    ).length === 0
+  ) {
+    winterUnique.push(winter[index]);
+  }
+}
+
+console.log(winter.length);
+console.log(winterUnique.length);
 
 // seznam vsech roku
 const roky = [...new Set(winter.map((d) => d.y))];
@@ -57,7 +88,7 @@ const sporty = [...new Set(winter.map((d) => d.d))];
 
 roky.map((r) => {
   ["M", "F"].map((s) => {
-    const rok = winter
+    const rok = winterUnique
       .filter((o) => o.h && o.w) // jen kdyz maji uvedenou vysku a vahu
       .filter((o) => o.y === r) // jen z tohoto roku
       .filter((o) => o.s === s); // jen jedno pohlavi
@@ -107,10 +138,10 @@ roky.map((r) => {
 //   )
 // );
 
-console.log(
-  winter
-    .filter((o) => o.s === "F")
-    .filter((o) => o.h && o.w)
-    .sort((a, b) => a.h - b.h)
-    .slice(0, 10)
-);
+// console.log(
+//   winter
+//     .filter((o) => o.s === "F")
+//     .filter((o) => o.h && o.w)
+//     .sort((a, b) => a.h - b.h)
+//     .slice(0, 10)
+// );
