@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import Highcharts from "highcharts";
+import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 const addUser = (data, weight, height) => {
@@ -31,11 +31,12 @@ const addUser = (data, weight, height) => {
 
 const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
   const [options, setOptions] = useState({});
-  useEffect(() => {
+  useLayoutEffect(() => {
     setOptions({
       chart: {
         type: "scatter",
         animation: false,
+        height: isMobile ? 300 + legendLength * 15.5 : "70%",
       },
       colors: [
         "#e64552",
@@ -55,12 +56,14 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         min: sex === "M" ? 45 : 30,
         max: sex === "M" ? 145 : 100,
         tickInterval: 10,
+        title: { enabled: false },
       },
       yAxis: {
         title: { text: "cm" },
         min: sex === "M" ? 140 : 135,
         max: sex === "M" ? 210 : 195,
         tickInterval: 10,
+        title: { enabled: false },
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",
@@ -75,17 +78,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
       series: addUser(data, weight, height),
     });
-  }, [data, height, weight]);
-
-  useEffect(() => {
-    setOptions({
-      ...options,
-      chart: {
-        ...options.chart,
-        height: isMobile ? 300 + legendLength * 15.5 : "70%",
-      },
-    });
-  }, [legendLength]);
+  }, [legendLength, data, height, weight]);
 
   return (
     <div className="graf">
