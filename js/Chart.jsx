@@ -83,14 +83,19 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       plotOptions: {},
       tooltip: {
         formatter: function () {
-          const stejniSportovci = data.map((disciplina) =>
-            disciplina.data.filter(
-              (s) => s.x === this.point.x && s.y === this.point.y
+          const stejniSportovci = data
+            .map((disciplina) =>
+              disciplina.data.filter(
+                (s) => s.x === this.point.x && s.y === this.point.y
+              )
             )
-          );
+            .flat()
+            .flat();
 
-          console.log(stejniSportovci);
-          return `${this.point.name}, ${this.point.custom}, ${this.point.t}: ${this.point.y} cm, ${this.point.x} kg`;
+          const tooltip = stejniSportovci.map(
+            (i) => `${i.name}, ${i.custom}, ${i.t}: ${i.y} cm, ${i.x} kg<br>`
+          );
+          return tooltip;
         },
       },
       series: addUser(data, weight, height),
