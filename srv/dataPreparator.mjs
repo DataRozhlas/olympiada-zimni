@@ -32,7 +32,8 @@ const winter = data
         preklad.filter((name) => name.term === d.Sport).length > 0
           ? preklad.filter((name) => name.term === d.Sport)[0].edit
           : d.Sport,
-      //     m: d.Medal,
+      m: d.Medal,
+      z: d.NOC,
     };
   });
 
@@ -61,11 +62,12 @@ for (let index = 0; index < winter.length; index++) {
     ).length === 0
   ) {
     winterUnique.push(winter[index]);
+    //   console.log(winter[index]);
   }
 }
 
-console.log(winter.length);
-console.log(winterUnique.length);
+// console.log(winter.length);
+// console.log(winterUnique.length);
 
 // seznam vsech roku
 const roky = [...new Set(winter.map((d) => d.y))];
@@ -83,6 +85,8 @@ fs.writeFileSync(
 // seznam vsech sportu
 
 const sporty = [...new Set(winter.map((d) => d.d))];
+
+// console.log(sporty);
 
 // rozsekej data po letech
 
@@ -107,7 +111,7 @@ roky.map((r) => {
               name: sportovec.n,
               y: sportovec.h,
               x: sportovec.w,
-              t: sportovec.t,
+              t: sportovec.z,
               custom: sportovec.d,
             };
           }),
