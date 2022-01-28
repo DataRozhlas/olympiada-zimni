@@ -101,9 +101,11 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             .flat();
 
           const tooltip = stejniSportovci.map(
-            (i) => `${i.name}, ${i.custom}, ${i.t}: ${i.y} cm, ${i.x} kg<br>`
+            (i) => `${i.name}, ${i.t}, ${i.custom}<br>`
           );
-          return tooltip;
+          return `<strong>${this.point.x} cm, ${
+            this.point.y
+          } kg</strong><br>${tooltip.join("")}`;
         },
       },
       series: addUser(data, weight, height),
