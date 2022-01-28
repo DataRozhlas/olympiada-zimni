@@ -94,14 +94,13 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
       tooltip: {
         formatter: function () {
-          const stejniSportovci = data
-            .map((disciplina) =>
-              disciplina.data.filter(
-                (s) => s.x === this.point.x && s.y === this.point.y
-              )
-            )
+          const stejniSportovci = this.series.chart.series
+            .filter((item) => item.visible)
+            .map((item) => item.data)
             .flat()
-            .flat();
+            .filter(
+              (item) => item.x === this.point.x && item.y === this.point.y
+            );
 
           const tooltip = stejniSportovci.map(
             (i) => `${i.name}, ${i.t}, ${i.custom}<br>`
