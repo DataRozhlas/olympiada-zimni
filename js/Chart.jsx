@@ -9,10 +9,11 @@ const addUser = (data, weight, height) => {
   if (weight > 0 && height > 0) {
     data.push({
       name: "vy",
+      showInLegend: false,
       data: [
         {
-          x: height,
-          y: weight,
+          x: weight,
+          y: height,
           name: "vy",
           t: "",
           custom: "",
@@ -31,7 +32,7 @@ const addUser = (data, weight, height) => {
 
 const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
   const [options, setOptions] = useState({});
-  useLayoutEffect(() => {
+  useEffect(() => {
     setOptions({
       chart: {
         type: "scatter",
@@ -62,6 +63,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             return this.isLast ? `${this.value} kg` : this.value;
           },
         },
+        plotLines: [{ value: weight }],
       },
       yAxis: {
         title: { text: "cm" },
@@ -74,6 +76,8 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             return this.isLast ? `${this.value} cm` : this.value;
           },
         },
+        left: 55,
+        plotLines: [{ value: height }],
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",
