@@ -82,6 +82,9 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
       plotOptions: {
         series: {
+          marker: {
+            symbol: "circle",
+          },
           states: {
             inactive: {
               opacity: 0.1,
