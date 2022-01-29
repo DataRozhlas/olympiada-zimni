@@ -63,7 +63,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             return this.isLast ? `${this.value} kg` : this.value;
           },
         },
-        plotLines: [{ value: weight, zIndex: 5 }],
+        plotLines: [{ value: weight, zIndex: 5, width: 1.5, color: "#FF0000" }],
       },
       yAxis: {
         min: sex === "M" ? 140 : 135,
@@ -76,7 +76,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
           },
         },
         left: 55,
-        plotLines: [{ value: height, zIndex: 5 }],
+        plotLines: [{ value: height, zIndex: 5, width: 1.5, color: "#FF0000" }],
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",
@@ -87,7 +87,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         series: {
           marker: {
             symbol: "circle",
-            radius: isMobile ? 1 : 4,
+            radius: isMobile ? 2 : 4,
           },
           states: {
             inactive: {

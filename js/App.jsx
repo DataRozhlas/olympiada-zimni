@@ -9,8 +9,8 @@ const App = () => {
   const [rok, setRok] = useState(2014);
   const [legendLength, setLegendLength] = useState(undefined);
   const [data, setData] = useState([]);
-  const [height, setHeight] = useState("");
-  const [weight, setWeight] = useState("");
+  const [height, setHeight] = useState(0);
+  const [weight, setWeight] = useState(0);
   const [sex, setSex] = useState("F");
 
   useEffect(() => {

@@ -1,54 +1,50 @@
 import React from "react";
+import Slider from "@mui/material/Slider";
+import Typography from "@mui/material/Typography";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
-  const changeSex = (e) => {
-    setSex(e.target.value);
-  };
-
-  const setWeightHeight = (e) => {
-    e.target.id === "weight"
-      ? setWeight(Number(e.target.value))
-      : setHeight(Number(e.target.value));
-  };
-
   return (
     <div>
-      <label htmlFor="height">Zadejte výšku </label>
-      <input
-        type="number"
+      <Typography id="height">Vaše výška</Typography>
+      <Slider
+        aria-label="height"
+        aria-labelledby="height"
+        onChange={(e) => setHeight(e.target.value)}
         id="height"
-        name="height"
         value={height}
-        onChange={setWeightHeight}
-        min="135"
-        max="210"
-        required
+        min={sex === "M" ? 140 : 135}
+        max={sex === "M" ? 210 : 195}
+        size="small"
+        valueLabelDisplay="auto"
+        valueLabelFormat={(x) => `${x} cm`}
       />
-      <label htmlFor="weight"> Zadejte váhu </label>
-      <input
-        type="number"
+      <Typography id="weight">Vaše váha</Typography>
+      <Slider
+        aria-label="weight"
+        aria-labelledby="weight"
+        onChange={(e) => setWeight(e.target.value)}
         id="weight"
-        name="weight"
         value={weight}
-        onChange={setWeightHeight}
-        min="30"
-        max="145"
-        required
+        min={sex === "M" ? 45 : 30}
+        max={sex === "M" ? 145 : 100}
+        size="small"
+        valueLabelDisplay="auto"
+        valueLabelFormat={(x) => `${x} kg`}
       />
-      <label>
-        <input
-          type="radio"
-          name="sex-radio"
-          value="F"
-          onChange={changeSex}
-          checked={sex === "F"}
-        />
-        ženy
-      </label>
-      <label>
-        <input type="radio" name="sex-radio" value="M" onChange={changeSex} />
-        muži
-      </label>
+      <ToggleButtonGroup
+        value={sex}
+        exclusive
+        onChange={(e) => setSex(e.target.value)}
+      >
+        <ToggleButton value="F" size="small">
+          ženy
+        </ToggleButton>
+        <ToggleButton value="M" size="small">
+          muži
+        </ToggleButton>
+      </ToggleButtonGroup>
     </div>
   );
 };
