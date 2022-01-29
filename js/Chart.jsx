@@ -41,10 +41,10 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
       colors: [
         "#e64552",
-        "#f57653",
-        "#f9c74f",
         "#993c82",
         "#4b4b8f",
+        "#f57653",
+        "#f9c74f",
         "#009cb8",
         "#71c9c8",
         "#43aa8b",
