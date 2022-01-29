@@ -87,15 +87,15 @@ fs.writeFileSync(
 //const sporty = [...new Set(winter.map((d) => d.d))];
 
 const sporty = [
+  ["Skoky na lyžích", "Severská kombinace"],
+  ["Boby"],
+  ["Krasobruslení"],
   ["Rychlobruslení", "Short track"],
   ["Běh na lyžích", "Biatlon", "Závod vojenských hlídek"],
   ["Lední hokej"],
   ["Alpské lyžování"],
   ["Saně", "Skeleton"],
-  ["Boby"],
-  ["Krasobruslení"],
   ["Akrobatické lyžování", "Snowboarding"],
-  ["Skoky na lyžích", "Severská kombinace"],
   ["Curling"],
   ["Alpinismus"],
 ];
