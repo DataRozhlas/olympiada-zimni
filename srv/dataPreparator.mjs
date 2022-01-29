@@ -84,9 +84,23 @@ fs.writeFileSync(
 
 // seznam vsech sportu
 
-const sporty = [...new Set(winter.map((d) => d.d))];
+//const sporty = [...new Set(winter.map((d) => d.d))];
 
-// console.log(sporty);
+const sporty = [
+  ["Rychlobruslení", "Short track"],
+  ["Běh na lyžích", "Biatlon", "Závod vojenských hlídek"],
+  ["Lední hokej"],
+  ["Alpské lyžování"],
+  ["Saně", "Skeleton"],
+  ["Boby"],
+  ["Krasobruslení"],
+  ["Akrobatické lyžování", "Snowboarding"],
+  ["Skoky na lyžích", "Severská kombinace"],
+  ["Curling"],
+  ["Alpinismus"],
+];
+
+console.log(sporty);
 
 // rozsekej data po letech
 
@@ -100,12 +114,12 @@ roky.map((r) => {
     const result = sporty.map((sport) => {
       return {
         showInLegend:
-          rok.filter((sportovec) => sportovec.d === sport).length > 0
+          rok.filter((sportovec) => sport.includes(sportovec.d)).length > 0
             ? true
             : false,
-        name: sport,
+        name: sport.length === 1 ? sport[0] : `${sport[0]} + ${sport[1]}`,
         data: rok
-          .filter((sportovec) => sportovec.d === sport)
+          .filter((sportovec) => sport.includes(sportovec.d))
           .map((sportovec) => {
             return {
               name: sportovec.n,

@@ -63,10 +63,9 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             return this.isLast ? `${this.value} kg` : this.value;
           },
         },
-        plotLines: [{ value: weight }],
+        plotLines: [{ value: weight, zIndex: 5 }],
       },
       yAxis: {
-        title: { text: "cm" },
         min: sex === "M" ? 140 : 135,
         max: sex === "M" ? 210 : 195,
         tickInterval: 10,
@@ -77,7 +76,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
           },
         },
         left: 55,
-        plotLines: [{ value: height }],
+        plotLines: [{ value: height, zIndex: 5 }],
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",
@@ -88,6 +87,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         series: {
           marker: {
             symbol: "circle",
+            radius: isMobile ? 1 : 4,
           },
           states: {
             inactive: {
@@ -109,8 +109,8 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
           const tooltip = stejniSportovci.map(
             (i) => `${i.name}, ${i.t}, ${i.custom}<br>`
           );
-          return `<strong>${this.point.x} cm, ${
-            this.point.y
+          return `<strong>${this.point.y} cm, ${
+            this.point.x
           } kg</strong><br>${tooltip.join("")}`;
         },
       },

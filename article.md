@@ -1,5 +1,5 @@
 title: "Na jaký sport se hodíte? Vyzkoušejte kalkulačku"
-perex: "Zadejte, výšku, váhu, pohlaví"
+perex: ""
 coverimg: https://interaktivni.rozhlas.cz/brexit/media/cover.jpg
 coverimg_note: "Foto <a href='https://ctk.cz'>ČTK</a>"
 styles: []
