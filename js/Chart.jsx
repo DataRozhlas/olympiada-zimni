@@ -63,7 +63,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             return this.isLast ? `${this.value} kg` : this.value;
           },
         },
-        plotLines: [{ value: weight, zIndex: 5, width: 1.5, color: "#FF0000" }],
+        plotLines: [{ value: weight, zIndex: 5, width: 1, color: "#FF0000" }],
       },
       yAxis: {
         min: sex === "M" ? 140 : 135,
@@ -75,8 +75,8 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             return this.isLast ? `${this.value} cm` : this.value;
           },
         },
-        left: 55,
-        plotLines: [{ value: height, zIndex: 5, width: 1.5, color: "#FF0000" }],
+        left: 60,
+        plotLines: [{ value: height, zIndex: 5, width: 1, color: "#FF0000" }],
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",

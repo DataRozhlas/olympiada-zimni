@@ -1,20 +1,22 @@
 import React from "react";
 import olympiady from "./../data/olympiady.json";
+import Typography from "@mui/material/Typography";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 const zmenRok = (e, setRok, olympiady, olympIndex) => {
   e.preventDefault();
   e.target.innerText === "←"
-    ? setRok(olympiady[olympIndex - 1][0])
-    : setRok(olympiady[olympIndex + 1][0]);
+    ? setRok(olympiady[olympIndex + 1].rok)
+    : setRok(olympiady[olympIndex - 1].rok);
 };
 
 const Title = ({ rok, setRok }) => {
-  const olympiada = olympiady.filter((olympiada) => olympiada[0] === rok);
-  const olympIndex = olympiady.findIndex((o) => o[0] === rok);
+  const olympIndex = olympiady.findIndex((o) => o.rok === rok);
   return (
     <div>
-      <h2 className="nav">
-        {olympIndex > 0 ? (
+      <Typography variant="h6" className="nav" sx={{ mt: 2, mb: 2 }}>
+        {olympIndex < olympiady.length - 1 ? (
           <span
             className="nav-link"
             onClick={(e) => {
@@ -27,9 +29,19 @@ const Title = ({ rok, setRok }) => {
           <span></span>
         )}
         <span>
-          {olympiada[0][0]}&nbsp;{olympiada[0][1]}
+          <Select
+            value={rok}
+            variant="standard"
+            onChange={(e) => setRok(e.target.value)}
+          >
+            {olympiady.map((o, i) => (
+              <MenuItem key={i} value={o.rok}>
+                {o.rok} {o.mesto}
+              </MenuItem>
+            ))}
+          </Select>
         </span>
-        {olympIndex < olympiady.length - 1 ? (
+        {olympIndex > 0 ? (
           <span
             className="nav-link"
             onClick={(e) => {
@@ -41,7 +53,7 @@ const Title = ({ rok, setRok }) => {
         ) : (
           <span></span>
         )}
-      </h2>
+      </Typography>
     </div>
   );
 };

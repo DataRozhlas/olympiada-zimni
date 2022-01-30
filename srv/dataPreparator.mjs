@@ -74,12 +74,15 @@ const roky = [...new Set(winter.map((d) => d.y))];
 
 // seznam vsech mest
 const olympiady = roky.map((r, i) => {
-  return [Number(r), winter.filter((o) => o.y === r).map((d) => d.c)[0]];
+  return {
+    rok: Number(r),
+    mesto: winter.filter((o) => o.y === r).map((d) => d.c)[0],
+  };
 });
 
 fs.writeFileSync(
   "data/olympiady.json",
-  JSON.stringify(olympiady.sort((a, b) => a[0] - b[0]))
+  JSON.stringify(olympiady.sort((a, b) => b.rok - a.rok))
 );
 
 // seznam vsech sportu
