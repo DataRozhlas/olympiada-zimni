@@ -11,7 +11,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
-  const [sex, setSex] = useState("F");
+  const [sex, setSex] = useState("M");
 
   useEffect(() => {
     fetch(`https://data.irozhlas.cz/olympiada-zimni/data/${rok}${sex}.json`)
