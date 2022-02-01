@@ -67,12 +67,14 @@ const Chart = ({
         series: {
           events: {
             legendItemClick: function () {
-              const kliknuta = data.filter((x) => x.name === this.name);
-              const novaData = data.filter((x) => x.name !== this.name);
-              setData([
-                ...novaData,
-                { ...kliknuta[0], visible: !kliknuta[0].visible },
-              ]);
+              const updated = {
+                ...data[this.index],
+                visible: !data[this.index].visible,
+              };
+              const newData = data.map((item, index) => {
+                return index === this.index ? updated : item;
+              });
+              setData(newData);
             },
           },
           marker: {
