@@ -122,12 +122,6 @@ roky.map((r) => {
             ? true
             : false,
         name: sport.length === 1 ? sport[0] : `${sport[0]} + ${sport[1]}`,
-        visible:
-          sport[0] === "Boby" ||
-          sport[0] === "Krasobruslení" ||
-          sport[0] === "Skoky na lyžích"
-            ? true
-            : false,
         data: rok
           .filter((sportovec) => sport.includes(sportovec.d))
           .map((sportovec) => {

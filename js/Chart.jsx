@@ -67,14 +67,14 @@ const Chart = ({
         series: {
           events: {
             legendItemClick: function () {
-              const updated = {
-                ...data[this.index],
-                visible: !data[this.index].visible,
-              };
-              const newData = data.map((item, index) => {
-                return index === this.index ? updated : item;
-              });
-              setData(newData);
+              // const updated = {
+              //   ...data[this.index],
+              //   visible: !data[this.index].visible,
+              // };
+              // const newData = data.map((item, index) => {
+              //   return index === this.index ? updated : item;
+              // });
+              // setData(newData);
             },
           },
           marker: {
