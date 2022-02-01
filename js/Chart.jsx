@@ -11,6 +11,7 @@ const Chart = ({
   isMobile,
   legendLength,
 }) => {
+  const [visible, setVisible] = useState([0, 1, 2]);
   const [options, setOptions] = useState({});
   useEffect(() => {
     setOptions({
@@ -67,6 +68,10 @@ const Chart = ({
         series: {
           events: {
             legendItemClick: function () {
+              visible.includes(this.index)
+                ? setVisible(visible.filter((x) => x !== this.index))
+                : setVisible([...visible, this.index]);
+
               // const updated = {
               //   ...data[this.index],
               //   visible: !data[this.index].visible,
@@ -106,7 +111,11 @@ const Chart = ({
           } kg</strong><br>${tooltip.join("")}`;
         },
       },
-      series: data,
+      series: data.map((item, index) => {
+        return visible.includes(index)
+          ? { ...item, visible: true }
+          : { ...item, visible: false };
+      }),
     });
   }, [data]);
 
