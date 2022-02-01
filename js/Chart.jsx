@@ -2,35 +2,15 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const addUser = (data, weight, height) => {
-  data.filter((item) => item.name === "vy").length > 0 ? data.pop() : null;
-
-  // přidej uživatele do grafu
-  if (weight > 0 && height > 0) {
-    data.push({
-      name: "vy",
-      showInLegend: false,
-      data: [
-        {
-          x: weight,
-          y: height,
-          name: "vy",
-          t: "",
-          custom: "",
-          marker: {
-            symbol:
-              "url(https://data.irozhlas.cz/olympiada-zimni/media/target.png)",
-            width: 30,
-            height: 30,
-          },
-        },
-      ],
-    });
-  }
-  return data;
-};
-
-const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
+const Chart = ({
+  data,
+  setData,
+  weight,
+  height,
+  sex,
+  isMobile,
+  legendLength,
+}) => {
   const [options, setOptions] = useState({});
   useEffect(() => {
     setOptions({
@@ -85,6 +65,16 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
       plotOptions: {
         series: {
+          events: {
+            legendItemClick: function () {
+              const kliknuta = data.filter((x) => x.name === this.name);
+              const novaData = data.filter((x) => x.name !== this.name);
+              setData([
+                ...novaData,
+                { ...kliknuta[0], visible: !kliknuta[0].visible },
+              ]);
+            },
+          },
           marker: {
             symbol: "circle",
             radius: isMobile ? 2 : 4,
@@ -114,14 +104,72 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
           } kg</strong><br>${tooltip.join("")}`;
         },
       },
-      series: addUser(data, weight, height),
+      series: data,
     });
-  }, [legendLength, data, height, weight]);
+  }, [data]);
+
+  useEffect(() => {
+    //pokud je už uživatel v grafu, tak ho odeber
+    // setOptions({...options, series : data.filter((item) => item.name === "vy").length > 0 ? data.pop() : }
+    //   data.filter((item) => item.name === "vy").length > 0 ? data.pop() : null;
+
+    // přidej uživatele do grafu/updatuj polohu plotLines
+    setOptions({
+      ...options,
+      series: [
+        ...data,
+        {
+          name: "vy",
+          data: [{ x: weight, y: height, name: "vy" }],
+          showInLegend: false,
+        },
+      ],
+      xAxis: {
+        ...options.xAxis,
+        plotLines: [
+          {
+            value: weight,
+            zIndex: 5,
+            width: 1,
+            color: "#FF0000",
+          },
+        ],
+      },
+      yAxis: {
+        ...options.yAxis,
+        plotLines: [
+          {
+            value: height,
+            zIndex: 5,
+            width: 1,
+            color: "#FF0000",
+          },
+        ],
+      },
+    });
+  }, [weight, height]);
+
+  useLayoutEffect(() => {
+    // při změně velikosti okna přepočítej velikost grafu
+    const chart = document.getElementById("chart");
+    const chartHeight = chart.clientHeight;
+    const chartWidth = chart.clientWidth;
+    setOptions({
+      ...options,
+      chart: {
+        ...options.chart,
+        height: isMobile ? chartHeight - legendLength * 15.5 : "70%",
+        width: isMobile ? "100%" : chartWidth,
+      },
+    });
+  }, [isMobile, legendLength]);
 
   return (
-    <div className="graf">
-      <HighchartsReact highcharts={Highcharts} options={options} />
-    </div>
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={options}
+      containerProps={{ id: "chart" }}
+    />
   );
 };
 

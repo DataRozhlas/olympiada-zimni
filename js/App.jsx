@@ -37,6 +37,7 @@ const App = () => {
       <Title rok={rok} setRok={setRok} />
       <Chart
         data={data}
+        setData={setData}
         height={height}
         weight={weight}
         sex={sex}

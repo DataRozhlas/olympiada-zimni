@@ -114,8 +114,9 @@ roky.map((r) => {
       .filter((o) => o.y === r) // jen z tohoto roku
       .filter((o) => o.s === s); // jen jedno pohlavi
 
-    const result = sporty.map((sport) => {
+    const result = sporty.map((sport, index) => {
       return {
+        index: index,
         showInLegend:
           rok.filter((sportovec) => sport.includes(sportovec.d)).length > 0
             ? true
