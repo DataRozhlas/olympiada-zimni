@@ -21,15 +21,17 @@ const Chart = ({
         height: isMobile ? 300 + legendLength * 15.5 : "70%",
       },
       colors: [
-        "#e64552",
-        "#993c82",
-        "#4b4b8f",
-        "#f57653",
-        "#f9c74f",
-        "#009cb8",
-        "#71c9c8",
-        "#43aa8b",
-        "#c9c9c9",
+        "#a6cee3",
+        "#1f78b4",
+        "#b2df8a",
+        "#33a02c",
+        "#fb9a99",
+        "#e31a1c",
+        "#fdbf6f",
+        "#ff7f00",
+        "#cab2d6",
+        "#6a3d9a",
+        "#ffff99",
       ],
       title: { text: "" },
       credits: { enabled: false },
@@ -71,15 +73,6 @@ const Chart = ({
               visible.includes(this.index)
                 ? setVisible(visible.filter((x) => x !== this.index))
                 : setVisible([...visible, this.index]);
-
-              // const updated = {
-              //   ...data[this.index],
-              //   visible: !data[this.index].visible,
-              // };
-              // const newData = data.map((item, index) => {
-              //   return index === this.index ? updated : item;
-              // });
-              // setData(newData);
             },
           },
           marker: {
