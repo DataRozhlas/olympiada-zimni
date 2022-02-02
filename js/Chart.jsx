@@ -101,11 +101,32 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             } kg</strong><br>${tooltip.join("")}`;
         },
       },
-      series: data.map((item, index) => {
-        return visible.includes(index)
-          ? { ...item, visible: true }
-          : { ...item, visible: false };
-      }),
+      series: (function () {
+        if (height || weight) {
+          return [
+            ...data.map((item, index) => {
+              return visible.includes(index)
+                ? { ...item, visible: true }
+                : { ...item, visible: false };
+            }),
+            {
+              name: "Vy",
+              data: [{ x: weight, y: height, name: "vy" }],
+              marker: {
+                symbol:
+                  "url(https://data.irozhlas.cz/olympiada-zimni/media/target.png)",
+                width: 30,
+                height: 30,
+              },
+            },
+          ];
+        } else
+          return data.map((item, index) => {
+            return visible.includes(index)
+              ? { ...item, visible: true }
+              : { ...item, visible: false };
+          });
+      })(),
     });
   }, [data, visible]);
 
