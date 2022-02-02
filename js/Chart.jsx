@@ -70,9 +70,14 @@ const Chart = ({
         series: {
           events: {
             legendItemClick: function () {
-              visible.includes(this.index)
-                ? setVisible(visible.filter((x) => x !== this.index))
-                : setVisible([...visible, this.index]);
+              const newVisible = visible.includes(this.index)
+                ? visible.filter((x) => x !== this.index)
+                : [...visible, this.index];
+              console.log(newVisible);
+              console.log(visible);
+              console.log(this.index);
+              console.log(visible.includes(this.index));
+              setVisible(newVisible);
             },
           },
           marker: {
@@ -110,7 +115,7 @@ const Chart = ({
           : { ...item, visible: false };
       }),
     });
-  }, [data]);
+  }, [data, visible]);
 
   useEffect(() => {
     //pokud je už uživatel v grafu, tak ho odeber
