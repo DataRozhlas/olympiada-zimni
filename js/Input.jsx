@@ -38,10 +38,10 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
         exclusive
         onChange={(e) => setSex(e.target.value)}
       >
-        <ToggleButton value="F" size="small">
+        <ToggleButton value="F" size="small" color="primary">
           ženy
         </ToggleButton>
-        <ToggleButton value="M" size="small">
+        <ToggleButton value="M" size="small" color="primary">
           muži
         </ToggleButton>
       </ToggleButtonGroup>

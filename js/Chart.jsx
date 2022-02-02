@@ -91,7 +91,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
 
           const tooltip = stejniSportovci.map((i) =>
             i.name === "Vy"
-              ? `<strong>a také vy</strong>`
+              ? `<strong>Vy</strong><br>`
               : `${i.name}, ${i.t}, ${i.custom}<br>`
           );
           return `<strong>${this.point.y} cm, ${
