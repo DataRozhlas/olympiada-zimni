@@ -55,7 +55,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
       legend: {
         layout: isMobile ? "horizontal" : "vertical",
-        verticalAlign: isMobile ? "bottom" : "middle",
+        verticalAlign: isMobile ? "bottom" : "top",
         align: isMobile ? "center" : "right",
       },
       plotOptions: {
