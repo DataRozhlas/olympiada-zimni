@@ -1,16 +1,9 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect, useMemo } from "react";
 import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import { thresholdFreedmanDiaconis } from "d3";
 
-const Chart = ({
-  data,
-  setData,
-  weight,
-  height,
-  sex,
-  isMobile,
-  legendLength,
-}) => {
+const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
   const [visible, setVisible] = useState([0, 1, 2]);
   const [options, setOptions] = useState({});
   useEffect(() => {
@@ -73,10 +66,6 @@ const Chart = ({
               const newVisible = visible.includes(this.index)
                 ? visible.filter((x) => x !== this.index)
                 : [...visible, this.index];
-              console.log(newVisible);
-              console.log(visible);
-              console.log(this.index);
-              console.log(visible.includes(this.index));
               setVisible(newVisible);
             },
           },
@@ -104,9 +93,12 @@ const Chart = ({
           const tooltip = stejniSportovci.map(
             (i) => `${i.name}, ${i.t}, ${i.custom}<br>`
           );
-          return `<strong>${this.point.y} cm, ${
-            this.point.x
-          } kg</strong><br>${tooltip.join("")}`;
+          if (this.series.name === "Vy") {
+            return `<strong>Vy: ${this.point.y} cm, ${this.point.x} kg</strong>`;
+          } else
+            return `<strong>${this.point.y} cm, ${
+              this.point.x
+            } kg</strong><br>${tooltip.join("")}`;
         },
       },
       series: data.map((item, index) => {
@@ -117,7 +109,7 @@ const Chart = ({
     });
   }, [data, visible]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     //pokud je už uživatel v grafu, tak ho odeber
     // setOptions({...options, series : data.filter((item) => item.name === "vy").length > 0 ? data.pop() : }
     //   data.filter((item) => item.name === "vy").length > 0 ? data.pop() : null;
@@ -128,9 +120,14 @@ const Chart = ({
       series: [
         ...data,
         {
-          name: "vy",
+          name: "Vy",
           data: [{ x: weight, y: height, name: "vy" }],
-          showInLegend: false,
+          marker: {
+            symbol:
+              "url(https://data.irozhlas.cz/olympiada-zimni/media/target.png)",
+            width: 30,
+            height: 30,
+          },
         },
       ],
       xAxis: {
