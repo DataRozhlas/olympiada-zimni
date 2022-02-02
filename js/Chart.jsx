@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect, useMemo } from "react";
 import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { thresholdFreedmanDiaconis } from "d3";
 
 const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
   const [visible, setVisible] = useState([0, 1, 2]);
@@ -113,10 +112,10 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
               name: "Vy",
               data: [{ x: weight, y: height, name: "vy" }],
               marker: {
-                symbol:
-                  "url(https://data.irozhlas.cz/olympiada-zimni/media/target.png)",
-                width: 30,
-                height: 30,
+                symbol: "square",
+                lineColor: "#FF0000",
+                fillColor: "#FF0000",
+                radius: 4,
               },
             },
           ];
@@ -144,10 +143,10 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
           name: "Vy",
           data: [{ x: weight, y: height, name: "vy" }],
           marker: {
-            symbol:
-              "url(https://data.irozhlas.cz/olympiada-zimni/media/target.png)",
-            width: 30,
-            height: 30,
+            symbol: "square",
+            lineColor: "#FF0000",
+            fillColor: "#FF0000",
+            radius: 4,
           },
         },
       ],

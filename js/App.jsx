@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Title from "./Title.jsx";
 import Chart from "./Chart.jsx";
 import Input from "./Input.jsx";
+import Veticka from "./Veticka.jsx";
 
 const isMobile = window.innerWidth <= 468;
 
@@ -34,6 +35,7 @@ const App = () => {
         weight={weight}
         setWeight={setWeight}
       />
+      <Veticka height={height} weight={weight} rok={rok} data={data} />
       <Title rok={rok} setRok={setRok} />
       <Chart
         data={data}
