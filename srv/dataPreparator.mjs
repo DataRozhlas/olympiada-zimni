@@ -76,7 +76,10 @@ const roky = [...new Set(winter.map((d) => d.y))];
 const olympiady = roky.map((r, i) => {
   return {
     rok: Number(r),
-    mesto: winter.filter((o) => o.y === r).map((d) => d.c)[0],
+    mesto: winter
+      .filter((o) => o.y === r)
+      .map((d) => d.c)[0]
+      .replace(".", ""),
   };
 });
 
