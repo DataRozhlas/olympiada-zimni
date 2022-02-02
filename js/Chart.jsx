@@ -89,15 +89,14 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
               (item) => item.x === this.point.x && item.y === this.point.y
             );
 
-          const tooltip = stejniSportovci.map(
-            (i) => `${i.name}, ${i.t}, ${i.custom}<br>`
+          const tooltip = stejniSportovci.map((i) =>
+            i.name === "Vy"
+              ? `<strong>a také vy</strong>`
+              : `${i.name}, ${i.t}, ${i.custom}<br>`
           );
-          if (this.series.name === "Vy") {
-            return `<strong>Vy: ${this.point.y} cm, ${this.point.x} kg</strong>`;
-          } else
-            return `<strong>${this.point.y} cm, ${
-              this.point.x
-            } kg</strong><br>${tooltip.join("")}`;
+          return `<strong>${this.point.y} cm, ${
+            this.point.x
+          } kg</strong><br>${tooltip.join("")}`;
         },
       },
       series: (function () {
@@ -141,7 +140,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
         ...data,
         {
           name: "Vy",
-          data: [{ x: weight, y: height, name: "vy" }],
+          data: [{ x: weight, y: height, name: "Vy" }],
           marker: {
             symbol: "square",
             lineColor: "#FF0000",
