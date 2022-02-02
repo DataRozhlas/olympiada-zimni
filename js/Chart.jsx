@@ -109,7 +109,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
             }),
             {
               name: "Vy",
-              data: [{ x: weight, y: height, name: "vy" }],
+              data: [{ x: weight, y: height, name: "Vy" }],
               marker: {
                 symbol: "square",
                 lineColor: "#FF0000",
