@@ -12,7 +12,11 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
     <div>
       <Stack>
         <Stack direction="row" sx={{ display: "flex", alignItems: "center" }}>
-          <Typography noWrap id="height" sx={{ overflow: "visible", mr: 2 }}>
+          <Typography
+            noWrap
+            id="height"
+            sx={{ overflow: "visible", mr: 2, minWidth: "5rem" }}
+          >
             Vaše výška
           </Typography>
           <Slider
@@ -29,7 +33,11 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
           />
         </Stack>
         <Stack direction="row" sx={{ display: "flex", alignItems: "center" }}>
-          <Typography id="weight" noWrap sx={{ overflow: "visible", mr: 2 }}>
+          <Typography
+            id="weight"
+            noWrap
+            sx={{ overflow: "visible", mr: 2, minWidth: "5rem" }}
+          >
             Vaše váha
           </Typography>
           <Slider
