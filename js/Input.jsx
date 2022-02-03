@@ -1,8 +1,11 @@
 import React from "react";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
 const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
   return (
@@ -33,18 +36,17 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
         valueLabelDisplay="auto"
         valueLabelFormat={(x) => `${x} kg`}
       />
-      <ToggleButtonGroup
-        value={sex}
-        exclusive
-        onChange={(e) => setSex(e.target.value)}
-      >
-        <ToggleButton value="F" size="small" color="primary">
-          ženy
-        </ToggleButton>
-        <ToggleButton value="M" size="small" color="primary">
-          muži
-        </ToggleButton>
-      </ToggleButtonGroup>
+      <FormControl>
+        <FormLabel id="sex">Pohlaví</FormLabel>
+        <RadioGroup
+          aria-labelledby="demo-controlled-radio-buttons-group"
+          value={sex}
+          onChange={(e) => setSex(e.target.value)}
+        >
+          <FormControlLabel value="F" control={<Radio />} label="ženy" />
+          <FormControlLabel value="M" control={<Radio />} label="muži" />
+        </RadioGroup>
+      </FormControl>
     </div>
   );
 };
