@@ -21,13 +21,27 @@ Samotná kombinace výšky a váhy samozřejmě amatérům nezaručuje vrcholov�
 
 I mezi olympioniky se ale najdou výjimky: sto padesát kilo na necelé dva metry u [amerického bobisty](https://www.olympedia.org/athletes/111132) z padesátých let jsou nezdravý poměr i na sportovce.
 
+<wide>
+<picture >
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/vaha-extremy-mob.svg" media="(max-width: 600px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/vaha-extremy-des.svg" loading="lazy" alt="Nejtěžší a nejlehčí sportovci v historii her" />
+</picture>
+</wide>
+<br>
+
 ## Zhubněte o kilo, poletíte o dva metry dál
 
 Historická data odhalují řadu trendů. Od padesátých let minulého století například většina olympioniků zmohutněla: muži v průměru o osm, ženy o pět kilogramů.
 
 Jak se změnil charakter jednotlivých sportů, napovídá srovnání éry od Osla 1952 po Grenoble 1968 s obdobím od Nagana 1998 po Soči 2014. Tedy nejstaršího a nejnovějšího období, ze kterých máme dostatečně spolehlivá data.
 
-GRAF: VÝŠKA A VÁHA PŘEHLED MUŽI
+<wide>
+<picture >
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vaha-mob.svg" media="(max-width: 600px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vaha-des.svg" loading="lazy" alt="Jak účastníci olympiád přibírají na vázes" />
+</picture>
+</wide>
+<br>
 
 V některých disciplínách je padesátiletý vývoj enormní, například zmiňovaných extra 17 kilo u mužských reprezentantů v alpském lyžování. Podobně ale muži nabyli i v řadě dalších disciplín: o devět a třináct kilogramů jsou v moderní éře těžší bobisté, hokejisté, sáňkaři, krasobruslaři i rychlobruslaři. Ve všech disciplínách olympionici narostli i do výšky, i když méně výrazně.
 
@@ -70,7 +84,13 @@ Zvláštní skupinou jsou běžkaři a biatlonisté, jejichž postavy se za pade
 
 „Nemyslím si ale, že by v budoucnu běh na lyžích ovládli dlouháni, rozhodně ne vytrvalostní disciplíny,“ dodává Korvas. „Hledáme talenty, mezi nimi jsou menší i vyšší, důležitější než výška je metabolismus a další fyziologické předpoklady. Pokud jsou zároveň vyšší a zvládnou nervosvalovou souhru, mají určité výhody. Ale nehledáme je cíleně. Klaebo je jedinečný.“
 
-GRAF: VÝŠKA A VÁHA PŘEHLED ŽENY
+<wide>
+<picture >
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vyska-mob.svg" media="(max-width: 600px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vyska-des.svg" loading="lazy" alt="Jak účastníci olympiád rostou do výšky" />
+</picture>
+</wide>
+<br>
 
 U žen je srovnání s padesátými lety obtížnější: v té době na olympiádách závodily pouze v pěti z dnešních patnácti sportů. Letos už soutěží ve čtrnácti, chybí jen v severské kombinaci.
 
@@ -82,7 +102,13 @@ Velkou změnou si ovšem prošli krasobruslaři a krasobruslařky: v padesátýc
 
 Třetím rozměrem olympijských dat je věk. Nepřekvapí, že dnešní olympionik má typicky mezi 22 a 28 lety, olympionička mezi 21 a 26 lety. Mezi Chamonix 1924 a Soči 2014 se ovšem typický věk vytrvale posunoval.
 
-GRAF: VĚK PŘEHLED MUŽI ŽENY
+<wide>
+<picture >
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vek-mob.svg" media="(max-width: 600px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vek-des.svg" loading="lazy" alt="Jak účastníci olympiád stárnou" />
+</picture>
+</wide>
+<br>
 
 Data lze rozdělit do tří období. Připomeňme, že z meziválečného pocházejí jen sporadické údaje, které je třeba s rezervou. U žen jsou data například zkreslená tím, že prezentují hlavně krasobruslařky. Právě mezi nimi v tomto období najdeme extrémně mladé olympioničky včetně té vůbec nejmladší: Cecilie Colledge za Velkou Británii závodila v roce 1932 krátce po jedenáctých narozeninách. Jedenáct bylo v době soutěže i legendární Norce Sonje Henie.
 
@@ -91,13 +117,3 @@ V období mezi druhou světovou válkou a začátkem osmdesátých let se věk o
 Sportovci v poválečné éře obvykle vrcholovou kariéru ukončili velmi mladí. Nejstarší aktivní účastnici her v roce 1984 bylo 34 let. V současnosti olympionici dozrávají v průměru později a kariéru také uzavírají ve vyšším věku. Mezi účastníky poválečných olympiád bylo jen kolem dvou procent mužů po pětatřicítce a pěti procent žen po třicítce. Dnes je to u obou pohlaví trojnásobek.
 
 „Vývoj průměrného věku sportovců je velice vrtkavá záležitost. Bylo by zajímavé podívat se také na počet lidí po celém světě, kteří se danému sportu věnovali,“ vysvětluje Zvonař. „Mezi hrami 1948 až 1980 totiž došlo k obrovskému nárůstu členské základny amatérských sportovců. Po tomto roce začíná sport stále častěji sloužit jako zdroj obživy, stává se z něj ‚průmyslové odvětví‘, které sportovce zaměstnává. Proto taky roste průměrný věk.“
-
-(jen ukázka pro kristi)
-<wide>
-<picture>
-
-<source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vyska-mob.svg" media="(max-width: 600px)">
-<img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vyska-des.svg" loading="lazy" alt="heatmapa" />
-</picture>
-</wide>
-<br>
