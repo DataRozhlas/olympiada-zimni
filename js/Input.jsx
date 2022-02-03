@@ -37,11 +37,10 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
         valueLabelFormat={(x) => `${x} kg`}
       />
       <FormControl>
-        <FormLabel id="sex">Pohlaví</FormLabel>
         <RadioGroup
-          aria-labelledby="demo-controlled-radio-buttons-group"
           value={sex}
           onChange={(e) => setSex(e.target.value)}
+          sx={{ display: "flex", flexDirection: "row" }}
         >
           <FormControlLabel value="F" control={<Radio />} label="ženy" />
           <FormControlLabel value="M" control={<Radio />} label="muži" />
