@@ -72,3 +72,7 @@ text.highcharts-credits {
 .nav-link {
   cursor: pointer;
 }
+
+.uzsi {
+  max-width: 950px;
+}

@@ -40,16 +40,16 @@ Klesla naopak hmotnost sportovců, kteří potřebují létat: skokanů na lyž�
 [Podle modelů](https://www.reuters.com/article/us-olympics-2018-skij-rules-idUSKCN1G314B) znamená kilo navíc na velkém skokanském můstku o dva a půl metru kratší skok, což v minulosti u skokanů často vedlo k [poruchám příjmu potravy](https://www.nytimes.com/2010/02/12/sports/olympics/12skijump.html). Funkcionáři proto v roce 2004 upravili pravidla tak, že hubenější skokani museli zkrátit lyže. Jak ovšem [upozorňují norští akademici](https://www.researchgate.net/publication/226404369_Effects_of_Body_Weight_on_Ski_Jumping_Performances_under_the_New_FIS_Rules_P3), hmotnost zůstala klíčová i po změně pravidel. Data jejich hypotézu potvrzují: váha olympijských skokanů se aplikací pravidla o zkracování lyží nezměnila.
 
 <wide>
-<picture>
+<picture >
     <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/muzi-vaha-v-case-mob.gif" media="(max-width: 600px)">
-    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/muzi-vaha-v-case-des.gif" loading="lazy" alt="graf podle věku" />
+    <img class="uzsi" src="https://data.irozhlas.cz/datavis-2022-olympiada-I/muzi-vaha-v-case-des.gif" loading="lazy" alt="jak se měnila váha mužů v čase" />
 </picture>
 </wide>
 <br>
 <wide>
-<picture>
+<picture class="uzsi">
     <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/zeny-vaha-v-case-mob.gif" media="(max-width: 600px)">
-    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/zeny-vaha-v-case-des.gif" loading="lazy" alt="graf podle věku" />
+    <img class="uzsi" src="https://data.irozhlas.cz/datavis-2022-olympiada-I/zeny-vaha-v-case-des.gif" loading="lazy" alt="jak se měnila váha žen v čase" />
 </picture>
 </wide>
 <br>
@@ -91,3 +91,13 @@ V období mezi druhou světovou válkou a začátkem osmdesátých let se věk o
 Sportovci v poválečné éře obvykle vrcholovou kariéru ukončili velmi mladí. Nejstarší aktivní účastnici her v roce 1984 bylo 34 let. V současnosti olympionici dozrávají v průměru později a kariéru také uzavírají ve vyšším věku. Mezi účastníky poválečných olympiád bylo jen kolem dvou procent mužů po pětatřicítce a pěti procent žen po třicítce. Dnes je to u obou pohlaví trojnásobek.
 
 „Vývoj průměrného věku sportovců je velice vrtkavá záležitost. Bylo by zajímavé podívat se také na počet lidí po celém světě, kteří se danému sportu věnovali,“ vysvětluje Zvonař. „Mezi hrami 1948 až 1980 totiž došlo k obrovskému nárůstu členské základny amatérských sportovců. Po tomto roce začíná sport stále častěji sloužit jako zdroj obživy, stává se z něj ‚průmyslové odvětví‘, které sportovce zaměstnává. Proto taky roste průměrný věk.“
+
+(jen ukázka pro kristi)
+<wide>
+<picture>
+
+<source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vyska-mob.svg" media="(max-width: 600px)">
+<img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/heatmapa-vyska-des.svg" loading="lazy" alt="heatmapa" />
+</picture>
+</wide>
+<br>
