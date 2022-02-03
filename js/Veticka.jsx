@@ -26,8 +26,6 @@ const Veticka = ({ weight, height, data, rok, sex }) => {
           .slice(0, 3)
       : null;
 
-  console.log(podobni);
-
   if (weight && height) {
     return (
       <>

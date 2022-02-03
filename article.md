@@ -27,13 +27,6 @@ Historická data odhalují řadu trendů. Od padesátých let minulého století
 
 Jak se změnil charakter jednotlivých sportů, napovídá srovnání éry od Osla 1952 po Grenoble 1968 s obdobím od Nagana 1998 po Soči 2014. Tedy nejstaršího a nejnovějšího období, ze kterých máme dostatečně spolehlivá data.
 
-<wide>
-<picture>
-    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-mob.svg" media="(max-width: 600px)">
-    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-des.svg" loading="lazy" alt="graf podle věku" />
-</picture>
-</wide>
-
 GRAF: VÝŠKA A VÁHA PŘEHLED MUŽI
 
 V některých disciplínách je padesátiletý vývoj enormní, například zmiňovaných extra 17 kilo u mužských reprezentantů v alpském lyžování. Podobně ale muži nabyli i v řadě dalších disciplín: o devět a třináct kilogramů jsou v moderní éře těžší bobisté, hokejisté, sáňkaři, krasobruslaři i rychlobruslaři. Ve všech disciplínách olympionici narostli i do výšky, i když méně výrazně.
@@ -46,7 +39,20 @@ Klesla naopak hmotnost sportovců, kteří potřebují létat: skokanů na lyž�
 
 [Podle modelů](https://www.reuters.com/article/us-olympics-2018-skij-rules-idUSKCN1G314B) znamená kilo navíc na velkém skokanském můstku o dva a půl metru kratší skok, což v minulosti u skokanů často vedlo k [poruchám příjmu potravy](https://www.nytimes.com/2010/02/12/sports/olympics/12skijump.html). Funkcionáři proto v roce 2004 upravili pravidla tak, že hubenější skokani museli zkrátit lyže. Jak ovšem [upozorňují norští akademici](https://www.researchgate.net/publication/226404369_Effects_of_Body_Weight_on_Ski_Jumping_Performances_under_the_New_FIS_Rules_P3), hmotnost zůstala klíčová i po změně pravidel. Data jejich hypotézu potvrzují: váha olympijských skokanů se aplikací pravidla o zkracování lyží nezměnila.
 
-GIF: VÝŠKA A VÁHA PODLE SPORTU, MUŽI ŽENY
+<wide>
+<picture>
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/muzi-vaha-v-case-mob.gif" media="(max-width: 600px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/muzi-vaha-v-case-des.gif" loading="lazy" alt="graf podle věku" />
+</picture>
+</wide>
+<br>
+<wide>
+<picture>
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/zeny-vaha-v-case-mob.gif" media="(max-width: 600px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/zeny-vaha-v-case-des.gif" loading="lazy" alt="graf podle věku" />
+</picture>
+</wide>
+<br>
 
 „Změna somatotypu sportovců do značné míry souvisí s přílivem peněz,“ komentuje data Martin Zvonař z Přírodovědecké fakulty MU. „Víc peněz vede k vyššímu tlaku na výkonnost a trenéři proto stále častěji v přípravě cílí na sportovce, kteří mají pro daný sport a pozici v týmu lepší parametry.
 
