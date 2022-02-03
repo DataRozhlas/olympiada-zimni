@@ -5,7 +5,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import Stack from "@mui/material/Stack";
 
 const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
   return (
@@ -23,7 +23,13 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
         valueLabelDisplay="auto"
         valueLabelFormat={(x) => `${x} cm`}
       />
-      <Typography id="weight">Vaše váha</Typography>
+      <Typography
+      // //    noWrap
+      //     id="weight"
+      //     sx={{ width: "max-content", pr: 2, textOverflow: "clip" }}
+      >
+        Vaše váha
+      </Typography>
       <Slider
         aria-label="weight"
         aria-labelledby="weight"
@@ -40,10 +46,12 @@ const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
         <RadioGroup
           value={sex}
           onChange={(e) => setSex(e.target.value)}
-          sx={{ display: "flex", flexDirection: "row" }}
+          //    sx={{ display: "flex", flexDirection: "row" }}
         >
-          <FormControlLabel value="F" control={<Radio />} label="ženy" />
-          <FormControlLabel value="M" control={<Radio />} label="muži" />
+          <Stack direction="row">
+            <FormControlLabel value="F" control={<Radio />} label="ženy" />
+            <FormControlLabel value="M" control={<Radio />} label="muži" />
+          </Stack>
         </RadioGroup>
       </FormControl>
     </div>
