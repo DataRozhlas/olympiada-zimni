@@ -11,6 +11,7 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 <wide>
 <div id="root">
 </wide>
+<br>
 
 _Data o výšce, váze a věku zimních olympioniků za roky 1924 až 2014 zveřejnila analytička [Randi Griffin](https://github.com/rgriff23/Olympic_history). U nejstarších her se jí podařilo dohledat údaje jen o některých sportovcích a sportovkyních, spolehlivější data pocházejí až z éry po druhé světové válce. Kompletní údaje u nejméně poloviny účastníků jsou dostupné od šedesátých let. V originálních datech chybí také diakritika a údaje z her v Pchjongčchangu 2018 i z těch letošních._
 

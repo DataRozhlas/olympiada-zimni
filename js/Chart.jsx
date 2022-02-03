@@ -10,7 +10,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       chart: {
         type: "scatter",
         animation: false,
-        height: isMobile ? 300 + legendLength * 15.5 : "70%",
+        height: isMobile ? 300 + legendLength * 15.5 : "50%",
       },
       colors: [
         "#a6cee3",
@@ -173,21 +173,6 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
       },
     });
   }, [weight, height]);
-
-  useLayoutEffect(() => {
-    // při změně velikosti okna přepočítej velikost grafu
-    const chart = document.getElementById("chart");
-    const chartHeight = chart.clientHeight;
-    const chartWidth = chart.clientWidth;
-    setOptions({
-      ...options,
-      chart: {
-        ...options.chart,
-        height: isMobile ? chartHeight - legendLength * 15.5 : "70%",
-        width: isMobile ? "100%" : chartWidth,
-      },
-    });
-  }, [isMobile, legendLength]);
 
   return (
     <HighchartsReact

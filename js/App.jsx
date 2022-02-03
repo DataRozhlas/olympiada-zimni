@@ -35,7 +35,7 @@ const App = () => {
         weight={weight}
         setWeight={setWeight}
       />
-      <Veticka height={height} weight={weight} rok={rok} data={data} />
+      {/* <Veticka height={height} weight={weight} rok={rok} data={data} /> */}
       <Title rok={rok} setRok={setRok} />
       <Chart
         data={data}
