@@ -10,38 +10,42 @@ import Stack from "@mui/material/Stack";
 const Input = ({ sex, setSex, height, setHeight, weight, setWeight }) => {
   return (
     <div>
-      <Typography id="height">Vaše výška</Typography>
-      <Slider
-        aria-label="height"
-        aria-labelledby="height"
-        onChange={(e) => setHeight(e.target.value)}
-        id="height"
-        value={height}
-        min={sex === "M" ? 140 : 135}
-        max={sex === "M" ? 210 : 195}
-        size="small"
-        valueLabelDisplay="auto"
-        valueLabelFormat={(x) => `${x} cm`}
-      />
-      <Typography
-      // //    noWrap
-      //     id="weight"
-      //     sx={{ width: "max-content", pr: 2, textOverflow: "clip" }}
-      >
-        Vaše váha
-      </Typography>
-      <Slider
-        aria-label="weight"
-        aria-labelledby="weight"
-        onChange={(e) => setWeight(e.target.value)}
-        id="weight"
-        value={weight}
-        min={sex === "M" ? 45 : 30}
-        max={sex === "M" ? 145 : 100}
-        size="small"
-        valueLabelDisplay="auto"
-        valueLabelFormat={(x) => `${x} kg`}
-      />
+      <Stack>
+        <Stack direction="row" sx={{ display: "flex", alignItems: "center" }}>
+          <Typography noWrap id="height" sx={{ overflow: "visible", mr: 2 }}>
+            Vaše výška
+          </Typography>
+          <Slider
+            aria-label="height"
+            aria-labelledby="height"
+            onChange={(e) => setHeight(e.target.value)}
+            id="height"
+            value={height}
+            min={sex === "M" ? 140 : 135}
+            max={sex === "M" ? 210 : 195}
+            size="small"
+            valueLabelDisplay="auto"
+            valueLabelFormat={(x) => `${x} cm`}
+          />
+        </Stack>
+        <Stack direction="row" sx={{ display: "flex", alignItems: "center" }}>
+          <Typography id="weight" noWrap sx={{ overflow: "visible", mr: 2 }}>
+            Vaše váha
+          </Typography>
+          <Slider
+            aria-label="weight"
+            aria-labelledby="weight"
+            onChange={(e) => setWeight(e.target.value)}
+            id="weight"
+            value={weight}
+            min={sex === "M" ? 45 : 30}
+            max={sex === "M" ? 145 : 100}
+            size="small"
+            valueLabelDisplay="auto"
+            valueLabelFormat={(x) => `${x} kg`}
+          />
+        </Stack>
+      </Stack>
       <FormControl>
         <RadioGroup
           value={sex}

@@ -32,9 +32,9 @@ const Veticka = ({ weight, height, data, rok, sex }) => {
         <Typography>
           {`Z ${vsichniSportovci.length} ${
             sex === "M" ? "sportovců" : "sportovkyň"
-          }, ke kterým máme z roku ${rok} data, se vám nejvíc podobá:`}
+          }, ke kterým máme z roku ${rok} data, se vám nejvíc podobají:`}
         </Typography>
-        <List>
+        <List dense={true}>
           {podobni.map((s, i) => (
             <ListItem key={i}>{`${
               s.name
