@@ -35,7 +35,6 @@ const App = () => {
         weight={weight}
         setWeight={setWeight}
       />
-      {/* <Veticka height={height} weight={weight} rok={rok} data={data} /> */}
       <Title rok={rok} setRok={setRok} />
       <Chart
         data={data}
@@ -45,6 +44,13 @@ const App = () => {
         sex={sex}
         isMobile={isMobile}
         legendLength={legendLength}
+      />
+      <Veticka
+        height={height}
+        weight={weight}
+        rok={rok}
+        data={data}
+        sex={sex}
       />
     </div>
   );

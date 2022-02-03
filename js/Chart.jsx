@@ -70,7 +70,7 @@ const Chart = ({ data, weight, height, sex, isMobile, legendLength }) => {
           },
           marker: {
             symbol: "circle",
-            radius: isMobile ? 2 : 4,
+            radius: isMobile ? 3 : 4,
           },
           states: {
             inactive: {

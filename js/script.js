@@ -10,6 +10,7 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+console.log("Hello from script.js");
 /*
 // snadné načtení souboru pro každého!
 fetch("https://blabla.cz/blabla.json")
