@@ -1,6 +1,6 @@
 title: "Jako bys mi z bobu vypadl. Kdo na olympiádě měří a váží jako vy?"
 perex: "Evoluce se nevyhýbá ani olympionikům a olympioničkám: sjezdaři jsou o 17 kilo těžší než v padesátých letech, váhový rozdíl mezi krasobruslařkami a krasobruslaři se ztrojnásobil. Sportovci rostou i do výšky a delší bývá také jejich kariéra."
-coverimg: https://interaktivni.rozhlas.cz/brexit/media/cover.jpg
+coverimg: <https://interaktivni.rozhlas.cz/brexit/media/cover.jpg>
 coverimg_note: "Foto <a href='https://ctk.cz'>ČTK</a>"
 styles: ["https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap", "https://fonts.googleapis.com/css?family=Noticia+Text", "https://fonts.googleapis.com/css2?family=Asap"]
 libraries: [] #jquery, d3, highcharts, datatables
@@ -27,6 +27,13 @@ Historická data odhalují řadu trendů. Od padesátých let minulého století
 
 Jak se změnil charakter jednotlivých sportů, napovídá srovnání éry od Osla 1952 po Grenoble 1968 s obdobím od Nagana 1998 po Soči 2014. Tedy nejstaršího a nejnovějšího období, ze kterých máme dostatečně spolehlivá data.
 
+<wide>
+<picture>
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-mob.svg" media="(max-width: 468px)">
+    <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-des.svg" loading="lazy" alt="graf podle věku" />
+</picture>
+</wide>
+
 GRAF: VÝŠKA A VÁHA PŘEHLED MUŽI
 
 V některých disciplínách je padesátiletý vývoj enormní, například zmiňovaných extra 17 kilo u mužských reprezentantů v alpském lyžování. Podobně ale muži nabyli i v řadě dalších disciplín: o devět a třináct kilogramů jsou v moderní éře těžší bobisté, hokejisté, sáňkaři, krasobruslaři i rychlobruslaři. Ve všech disciplínách olympionici narostli i do výšky, i když méně výrazně.
@@ -41,7 +48,7 @@ Klesla naopak hmotnost sportovců, kteří potřebují létat: skokanů na lyž�
 
 GIF: VÝŠKA A VÁHA PODLE SPORTU, MUŽI ŽENY
 
-„Změna somatotypu sportovců do značné míry souvisí s přílivem peněz,“ komentuje data Martin Zvonař z Přírodovědecké fakulty MU. „Víc peněz vede k vyššímu tlaku na výkonnost a trenéři proto stále častěji v přípravě cílí na sportovce, kteří mají pro daný sport a pozici v týmu lepší parametry. 
+„Změna somatotypu sportovců do značné míry souvisí s přílivem peněz,“ komentuje data Martin Zvonař z Přírodovědecké fakulty MU. „Víc peněz vede k vyššímu tlaku na výkonnost a trenéři proto stále častěji v přípravě cílí na sportovce, kteří mají pro daný sport a pozici v týmu lepší parametry.
 
 „Vzrůstající šance uživit se sportem jednoznačně tlačí na specializaci od čím dál nižšího věku,“ dodává. „Rozdíl mezi současným somatotypem a sportovci před čtyřiceti či sedmdesáti lety je tedy odrazem změn smyslu a účelu sportu.“
 
@@ -59,7 +66,7 @@ Zvláštní skupinou jsou běžkaři a biatlonisté, jejichž postavy se za pade
 
 GRAF: VÝŠKA A VÁHA PŘEHLED ŽENY
 
-U žen je srovnání s padesátými lety obtížnější: v té době na olympiádách závodily pouze v pěti z dnešních patnácti sportů. Letos už soutěží ve čtrnácti, chybí jen v severské kombinaci. 
+U žen je srovnání s padesátými lety obtížnější: v té době na olympiádách závodily pouze v pěti z dnešních patnácti sportů. Letos už soutěží ve čtrnácti, chybí jen v severské kombinaci.
 
 Kde je historické srovnání možné, většinou vidíme podobné trendy jako u mužů, jen ne tak výrazné. V alpském lyžování, saních a rychlobruslení olympioničky zmohutněly, v běhu na lyžích je změna jen nepatrná.
 
