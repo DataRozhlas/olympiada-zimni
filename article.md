@@ -29,7 +29,7 @@ Jak se změnil charakter jednotlivých sportů, napovídá srovnání éry od Os
 
 <wide>
 <picture>
-    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-mob.svg" media="(max-width: 468px)">
+    <source srcset="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-mob.svg" media="(max-width: 600px)">
     <img src="https://data.irozhlas.cz/datavis-2022-olympiada-I/vek-des.svg" loading="lazy" alt="graf podle věku" />
 </picture>
 </wide>

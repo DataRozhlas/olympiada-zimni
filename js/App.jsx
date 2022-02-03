@@ -4,7 +4,7 @@ import Chart from "./Chart.jsx";
 import Input from "./Input.jsx";
 import Veticka from "./Veticka.jsx";
 
-const isMobile = window.innerWidth <= 468;
+const isMobile = window.innerWidth <= 600;
 
 const App = () => {
   const [rok, setRok] = useState(2014);
